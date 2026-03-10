@@ -85,11 +85,12 @@ async def update_param(
 async def list_params(
     app: Optional[str] = None,
     name: Optional[str] = None,
+    get_all_values: bool = False,
     current_user: User = Depends(get_current_user),
     service: ParameterService = Depends(get_parameter_service)
 ) -> list[dict[str, str]]:
     """Retrieves all parameter names for the current user."""
-    return service.get_parameters_for_user(current_user.id, app=app, name=name)
+    return service.get_parameters_for_user(current_user.id, app=app, name=name, get_all_values=get_all_values)
 
 
 @router.get("/{name}")

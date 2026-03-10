@@ -76,7 +76,7 @@ class ParameterService:
 
         return value
 
-    def get_parameters_for_user(self, user_id: int, app: Optional[str] = None, name: Optional[str] = None) -> list[dict[str, str]]:
+    def get_parameters_for_user(self, user_id: int, app: Optional[str] = None, name: Optional[str] = None, get_all_values: bool = False) -> list[dict[str, str]]:
         """Retrieves all parameter names for a user, with optional filtering."""
         query = self.db.query(Parameter).filter(Parameter.user_id == user_id)
         
@@ -86,7 +86,7 @@ class ParameterService:
             query = query.filter(Parameter.name.ilike(f"%{name}%"))
             
         db_params = query.all()
-        return [{"name": p.name, "app": p.app} for p in db_params]
+        return [{"name": p.name, "app": p.app, "value": self.get_parameter(user_id, p.name, p.app)} for p in db_params] if get_all_values else [{"name": p.name, "app": p.app} for p in db_params]
 
     def delete_param(self, user_id: int, name: str, app: str = "default") -> bool:
         db_param = self.db.query(Parameter).filter(

@@ -283,9 +283,16 @@ select:focus {
   font-size: 1.2rem;
   background-color: var(--panel-bg) !important;
   border: 2px solid var(--border-color);
-  color: #ffffff !important;
+  color: var(--text-color) !important;
+  -webkit-text-fill-color: var(--text-color) !important;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
   transition: all 0.3s ease;
+}
+
+.search-container input::placeholder {
+  color: var(--text-muted);
+  -webkit-text-fill-color: var(--text-muted);
+  opacity: 1;
 }
 
 .search-container input:focus {
