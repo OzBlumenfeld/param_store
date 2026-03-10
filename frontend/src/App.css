@@ -278,6 +278,7 @@ select:focus {
 }
 
 .search-container input {
+  width: 100% !important;
   padding-left: 3.5rem !important;
   height: 5rem;
   font-size: 1.5rem;
@@ -287,6 +288,7 @@ select:focus {
   -webkit-text-fill-color: var(--text-color) !important;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
   transition: all 0.3s ease;
+  box-sizing: border-box !important;
 }
 
 .search-container input::placeholder {
@@ -313,7 +315,10 @@ select:focus {
 
 .app-filter-select {
   height: 5rem;
-  min-width: 200px;
+  width: auto !important;
+  flex-shrink: 0;
+  min-width: 220px;
+  max-width: 280px;
   background-color: var(--panel-bg) !important;
   border: 2px solid var(--border-color);
   color: #ffffff !important;
@@ -325,4 +330,45 @@ select:focus {
 .app-filter-select:focus {
   border-color: var(--accent-color);
   outline: none;
+}
+
+.edit-form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.edit-input {
+  flex: 1 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0.6rem 0.75rem !important;
+  border-radius: 6px !important;
+  border: 1.5px solid var(--accent-color) !important;
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  font-size: 0.95rem !important;
+  box-sizing: border-box !important;
+}
+
+.edit-input::placeholder {
+  color: #94a3b8;
+  -webkit-text-fill-color: #94a3b8;
+  opacity: 1;
+}
+
+.edit-input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25) !important;
+}
+
+.edit-btn {
+  width: auto !important;
+  flex-shrink: 0;
+  padding: 0.6rem 0.9rem !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }

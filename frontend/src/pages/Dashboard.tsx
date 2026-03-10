@@ -298,42 +298,32 @@ const Dashboard = () => {
               {editingParam?.name === param.name && editingParam?.app === param.app ? (
                 <form
                   onSubmit={(e) => handleUpdateSubmit(e, param.name, param.app)}
-                  style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem' }}
+                  className="edit-form"
                 >
                   <input
                     type="text"
-                    placeholder="New secret value"
+                    placeholder="New value..."
                     value={editValue}
                     onChange={(e) => setEditValue(e.target.value)}
                     required
                     autoFocus
-                    style={{
-                      flex: 1,
-                      padding: '0.5rem',
-                      borderRadius: '4px',
-                      border: '1px solid var(--border-color)',
-                      backgroundColor: 'var(--panel-bg)',
-                      color: 'var(--text-color)',
-                      fontSize: '1rem',
-                    }}
+                    className="edit-input"
                   />
                   <button
                     type="submit"
-                    className="btn"
+                    className="btn edit-btn"
                     disabled={updatingValues[`${param.app}-${param.name}`]}
-                    style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     title="Save"
                   >
-                    {updatingValues[`${param.app}-${param.name}`] ? '...' : <Check size={16} />}
+                    {updatingValues[`${param.app}-${param.name}`] ? '...' : <Check size={18} />}
                   </button>
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-secondary edit-btn"
                     onClick={handleCancelEdit}
-                    style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     title="Cancel"
                   >
-                    <X size={16} />
+                    <X size={18} />
                   </button>
                 </form>
               ) : (
