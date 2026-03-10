@@ -27,9 +27,6 @@ app.include_router(params_router)
 app.include_router(auth_router)
 
 if __name__ == "__main__":
-    # In a real app, use migrations (alembic)
-    Base.metadata.create_all(bind=engine)
-    
     port = 8181
     logger.info("Server is starting", extra={"port": port})
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
