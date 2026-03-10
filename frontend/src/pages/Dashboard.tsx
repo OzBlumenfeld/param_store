@@ -241,7 +241,7 @@ const Dashboard = () => {
 
       <div className="filter-bar">
         <div className="search-container">
-          <Search size={20} className="search-icon" />
+          <Search size={28} className="search-icon" />
           <input
             type="text"
             placeholder="Search parameters by name..."
@@ -301,13 +301,21 @@ const Dashboard = () => {
                   style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem' }}
                 >
                   <input
-                    type="password"
+                    type="text"
                     placeholder="New secret value"
                     value={editValue}
                     onChange={(e) => setEditValue(e.target.value)}
                     required
                     autoFocus
-                    style={{ flex: 1, padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)' }}
+                    style={{
+                      flex: 1,
+                      padding: '0.5rem',
+                      borderRadius: '4px',
+                      border: '1px solid var(--border-color)',
+                      backgroundColor: 'var(--panel-bg)',
+                      color: 'var(--text-color)',
+                      fontSize: '1rem',
+                    }}
                   />
                   <button
                     type="submit"

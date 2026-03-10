@@ -278,9 +278,9 @@ select:focus {
 }
 
 .search-container input {
-  padding-left: 3rem !important;
-  height: 3.5rem;
-  font-size: 1.2rem;
+  padding-left: 3.5rem !important;
+  height: 5rem;
+  font-size: 1.5rem;
   background-color: var(--panel-bg) !important;
   border: 2px solid var(--border-color);
   color: var(--text-color) !important;
@@ -307,10 +307,12 @@ select:focus {
   color: var(--accent-color);
   pointer-events: none;
   z-index: 10;
+  width: 28px;
+  height: 28px;
 }
 
 .app-filter-select {
-  height: 3.5rem;
+  height: 5rem;
   min-width: 200px;
   background-color: var(--panel-bg) !important;
   border: 2px solid var(--border-color);
